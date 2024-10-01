@@ -1,0 +1,679 @@
+body {
+    padding: none;
+    height: auto;
+    background: rgba(0, 0, 0, 1); /* Fundo escuro semitransparente */
+    z-index: -10;
+}
+
+/* Cabeçalho (Header) */
+#header {
+    height: 100vh; /* Ocupa a altura total da janela */
+    background: linear-gradient(90deg, 
+        #000000 0%, 
+        #0d0d0d 10%, 
+        #1a1a1a 20%, 
+        #262626 30%, 
+        #333333 40%, 
+        #404040 50%, 
+        #4d4d4d 60%, 
+        #595959 70%, 
+        #666666 80%, 
+        #737373 100%);
+    background-size: 2200% 2200%; /* Aumenta o tamanho do fundo para suavizar */
+    display: flex; /* Flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Para partículas não transbordarem */
+    animation: gradientBackground 45s ease infinite; /* Animação do fundo */
+}
+
+/* Animação do fundo */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+.header-content {
+    margin-bottom: 200px;
+    z-index: 10; /* Coloca o conteúdo à frente das partículas */
+}
+
+.header-content h1 {
+    font-family: 'Playfair Display', serif; /* Fonte sofisticada para o título */
+    font-size: 4rem; /* Tamanho grande para destacar */
+    color: #e6b89c; /* Tom terracota */
+    letter-spacing: 3px; /* Espaçamento entre letras */
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(50px) rotateX(10deg) rotateY(-10deg); /* Efeito 3D */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 
+                 -1px -1px 1px rgba(255, 255, 255, 0.2); /* Sombras para profundidade */
+}
+
+@keyframes emerge3D {
+    from {
+        transform: translateY(50px) rotateX(10deg) rotateY(-10deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) rotateX(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
+.header-content h2 {
+    color: white;
+}
+
+.header-content h2 {
+    animation: emerge3D 1.5s ease-out forwards;
+}
+
+
+.header-content h1 {
+    animation: emerge3D 1.5s ease-out forwards;
+}
+
+.header-content p {
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna e clean */
+    font-size: 1.2rem;
+    color: #c7c7c7; /* Cinza claro */
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(50px); /* Inicia fora de vista */
+}
+
+/* Animações de entrada */
+.header-content h1,
+.header-content p {
+    animation: fadeInUp 1.5s ease-out forwards; /* Efeito de desvanecer para cima */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  
+
+/* Estilo da seta de rolagem */
+.scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px; /* Distância da parte inferior da tela */
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+    border: solid #e6b89c;
+    border-width: 0 2px 2px 0px; /* Ajusta as bordas para criar a seta */
+    display: inline-block;
+    transform: rotate(45deg); /* Rotaciona a seta para baixo */
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg); /* Aponta para baixo */
+    }
+    40% {
+        transform: translateY(-10px) rotate(45deg); /* Movimento para cima */
+    }
+    60% {
+        transform: translateY(-5px) rotate(45deg); /* Movimento para cima */
+    }
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+}
+
+/* Contato */
+.contact {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+.by-me {
+    height: 110vh;
+    background: rgba(0, 0, 0, 0.9); /* Fundo escuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    color: #fff; /* Cor do texto clara */
+}
+
+.by-me-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.by-me-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.by-me-info {
+    flex: 2;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.by-me h2 {
+    font-family: 'Playfair Display', serif; /* Fonte sofisticada */
+    font-size: 3rem; /* Tamanho maior */
+    margin-bottom: 10px;
+    color: #f0f0f0; /* Cor mais clara */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Sombra mais suave */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    animation: fadeInUp 1s ease-out; /* Animação de entrada */
+}
+
+.by-me h3 {
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Cor do subtítulo */
+}
+
+.by-me p {
+    max-width: 600px;
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e0e0e0; /* Cor do texto mais suave */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: color 0.5s ease, text-shadow 0.5s ease; /* Transição suave */
+    cursor: pointer;
+}
+
+.by-me p:hover {
+    color: #ffffff; /* Cor do texto no hover */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Efeito de brilho */
+}
+
+.by-me .foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Torna a imagem circular */
+    border: 3px solid #f0f0f0; /* Borda branca */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra para destacar */
+    object-fit: cover; /* Ajusta a imagem sem distorção */
+}
+
+.info-list {
+    list-style-type: none;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.info-list strong {
+    color: #f0f0f0; /* Cor mais clara para rótulos */
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+
+/* Projetos */
+.projects {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna (título em cima, swiper em baixo) */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.projects h2 {
+    position: relative;
+    margin: 0 0 100px; /* Espaçamento inferior */
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 34px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: inline-block; /* Para garantir que o título fique no centro do flexbox */
+}
+
+/* Bordas animadas */
+.border-vertical, .border-horizontal {
+    position: absolute;
+    background-color: white;
+}
+
+.border-vertical {
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+}
+
+.border-horizontal {
+    right: 0;
+    top: 100%;
+    width: 0;
+    height: 2px;
+}
+
+/* Swiper Container */
+.swiper {
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    max-width: 540px; /* Define uma largura máxima */
+    height: 450px; /* Permite que a altura seja ajustada automaticamente */
+    color: #000000;
+    margin: 0 auto; /* Centraliza o swiper */
+}
+
+/* Swiper Slide */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .swiper {
+        width: 90%; /* Ocupa 90% da largura da tela em ecrãs menores */
+        max-width: 300px; /* Reduz a largura máxima do Swiper */
+        height: auto; /* Altura ajustada automaticamente */
+    }
+
+    .swiper-slide {
+        padding: 15px; /* Ajusta o espaçamento nos slides */
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper {
+        width: 100%; /* Ocupa 100% da largura em ecrãs muito pequenos */
+        max-width: 280px; /* Ainda menor em ecrãs de smartphones */
+    }
+
+    .swiper-slide {
+        padding: 10px; /* Ajusta o padding para evitar sobrecarga de espaço */
+    }
+}
+
+/* Secção de Skills */
+.skills {
+    display: flex; /* Organiza os cards horizontalmente */
+    justify-content: center; /* Centraliza os cards */
+    flex-wrap: wrap; /* Permite que os cards passem para a linha de baixo se necessário */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 60px 20px 20px; /* Espaçamento extra no topo para o título */
+    background: rgba(0, 0, 0, 0.9); /* Fundo escuro semitransparente */
+    position: relative; /* Para que o título se posicione corretamente */
+    min-height: 50vh;
+    margin-top: 120px;
+}
+
+/* Título H2 */
+.skills h2 {
+    position: absolute;
+    top: 20px; /* Posiciona o título no topo */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o título horizontalmente */
+    text-align: center;
+    font-size: 34px;
+    color: #f4f4f4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    margin: 0; /* Remove margens do título */
+    width: 100%; /* Para garantir que o texto ocupe todo o espaço */
+}
+
+/* Estilo dos Cards */
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Efeito 3D */
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: opacity 0.5s, transform 0.5s; /* Transições suaves */
+    margin-top: 60px; /* Espaço adicional para o título */
+}
+
+/* Cards Hover Effect */
+.card:hover {
+    transform: rotateY(180deg); /* Girar ao passar o mouse */
+}
+
+.card div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Esconder o verso quando não visível */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* Frente e Verso dos Cards */
+.front, .back {
+    z-index: 2;
+    user-select: none;
+    border: 1px solid #ffffff22;
+    background-color: #282c34;
+    background: linear-gradient(90deg, #282c34, rgba(17, 0, 32, 0.5));
+    background-size: 200% 100%;
+    animation: gradientMove 5s linear infinite;
+    box-shadow: 0 7px 20px 5px #37373788;
+    border-radius: 0.7rem;
+    backdrop-filter: blur(7px);
+    overflow: hidden;
+    transition: 0.5s all;
+}
+
+/* Animação do gradiente (opcional) */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Responsividade para a parte de trás */
+@media (max-width: 1024px) {
+    .back img {
+        width: 80px; /* Ajuste a largura da imagem */
+    }
+
+    .back p {
+        font-size: 14px; /* Ajuste o tamanho da fonte */
+        padding: 5px; /* Ajuste o padding se necessário */
+    }
+}
+
+@media (max-width: 768px) {
+    .back img {
+        width: 60px; /* Menor largura da imagem */
+    }
+
+    .back p {
+        font-size: 12px; /* Tamanho da fonte menor */
+        padding: 4px; /* Ajuste o padding se necessário */
+    }
+
+    .rating {
+        margin-bottom: 30px;
+        position: absolute;
+    }
+
+    .details p {
+        margin-top: -10px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 480px) {
+    .back img {
+        width: 50px; /* Ajuste para telas menores */
+    }
+
+    .back p {
+        font-size: 10px; /* Tamanho da fonte menor */
+        padding: 2px; /* Ajuste o padding se necessário */
+    }
+
+    .rating {
+        margin-bottom: 30px;
+        position: absolute;
+    }
+}
+
+.back {
+    transform: rotateY(180deg); /* O verso já começa rotacionado */
+    border: 3px solid gold;
+}
+
+.back img {
+    width: 100px;
+    top: 25%;
+    position: absolute;
+}
+
+.back p {
+    margin-top: null;
+}
+
+/* Hover: Girar os cards */
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(360deg); /* Volta à frente */
+}
+
+/* Card de HTML */
+.card-html .front {
+    background-color: #e44d26; /* Cor para a frente */
+    color: black;
+}
+
+.card-html .back {
+    background-color: #f16529; /* Cor para o verso */
+    color: white;
+}
+
+/* Card de CSS */
+.card-css .front {
+    background-color: #264de4;
+    color: black;
+}
+
+.card-css .back {
+    background-color: #2965f1;
+    color: white;
+}
+
+/* Card de JavaScript */
+.card-js .front {
+    background-color: #f0db4f;
+    color: black;
+}
+
+.card-js .back {
+    background-color: #f6e15b;
+    color: white;
+}
+
+/* Card de JavaScript */
+.card-python .front {
+    background-color: #f0db4f;
+    color: black;
+}
+
+.card-python .back {
+    background-color: #f6e15b;
+    color: white;
+}
+
+/* Card de React */
+.card-react .front {
+    background-color: #61dafb; /* Azul claro do React */
+    color: black;
+}
+
+.card-react .back {
+    background-color: #20232a; /* Cinza escuro do React */
+    color: white;
+}
+
+/* Card de SQL */
+.card-sql .front {
+    background-color: #f29111; /* Cor laranja (ex: MySQL) */
+    color: black;
+}
+
+.card-sql .back {
+    background-color: #00758f; /* Azul escuro (ex: MySQL logo) */
+    color: white;
+}
+
+/* Card de C++ */
+.card-cpp .front {
+    background-color: #00599c; /* Azul do C++ */
+    color: white;
+}
+
+.card-cpp .back {
+    background-color: #004482; /* Azul mais escuro para o verso */
+    color: white;
+}
+
+/* Card de Inglês */
+.card-ingles .front {
+    background-color: #002868; /* Azul da bandeira dos EUA/Reino Unido */
+    color: white;
+}
+
+.card-ingles .back {
+    background-color: #bf0a30; /* Vermelho da bandeira */
+    color: white;
+}
+
+/* Animação do gradiente */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        width: 150px;
+        height: 250px;
+    }
+}
+
+.rating {
+    margin-top: 240px;
+    position: absolute;
+}
+
+.star {
+    font-size: 2em; /* Aumenta o tamanho da estrela */
+    color: gold; /* Opcional: Define a cor da estrela */
+}
+
+
+.details h3 {
+    margin-top: -190px;
+    position: absolute;
+}
+
+.details p {
+    position: absolute;
+    top: 170px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    display: inline;
+}
+
+.experience {
+    position: relative;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9); /* Fundo escuro semitransparente */
+    color: #f4f4f4;
+    padding-top: 100px;
+}
+
+.testimonials {
+    position: relative;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9); /* Fundo escuro semitransparente */
+    color: #f4f4f4;
+}
+
+.contact {
+    position: relative;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9); /* Fundo escuro semitransparente */
+    color: #f4f4f4;
+}
