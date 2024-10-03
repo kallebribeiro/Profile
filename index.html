@@ -161,7 +161,7 @@
                 <div class="front">CSS</div>
                 <div class="back">
                     <div class="details">
-                        <h3>Intermédio</h3>
+                        <h3>Avançado</h3>
                         <div class="rating">
                             <span class="star">&#9733;</span>
                             <span class="star">&#9733;</span>
@@ -178,7 +178,7 @@
                 <div class="front">JavaScript</div>
                 <div class="back">
                     <div class="details">
-                        <h3>Avançado</h3>
+                        <h3>intermédio</h3>
                         <div class="rating">
                             <span class="star">&#9733;</span>
                             <span class="star">&#9733;</span>
@@ -195,12 +195,12 @@
                 <div class="front">Python</div>
                 <div class="back">
                     <div class="details">
-                        <h3>Intermédio</h3>
+                        <h3>Avançado</h3>
                         <div class="rating">
                             <span class="star">&#9733;</span>
                             <span class="star">&#9733;</span>
                             <span class="star">&#9733;</span>
-                            <span class="star">&#9734;</span>
+                            <span class="star">&#9733;</span>
                             <span class="star">&#9734;</span>
                         </div>
                         <img src="imgs/pngegg (3).png" alt="Python Icon" height="" width="">
@@ -213,8 +213,8 @@
                 <div class="front">React</div>
                 <div class="back">
                 <div class="details">
-                    <h3>Intermédio</h3>
-                    <img src="imgs/react.png" alt="React Icon">
+                    <h3>Básico</h3>
+                    <img src="imgs\pngwing.com (2).png" alt="React Icon">
                     <p class="extra-info">Experiência com componentes, hooks e Redux.</p>
                     <div class="rating">
                     <span class="star">&#9733;</span>
@@ -232,9 +232,9 @@
                 <div class="front">SQL</div>
                 <div class="back">
                 <div class="details">
-                    <h3>Avançado</h3>
-                    <img src="imgs/sql.png" alt="SQL Icon">
-                    <p class="extra-info">Conhecimento em consultas complexas e otimização de bases de dados.</p>
+                    <h3>intermédio</h3>
+                    <img src="imgs\pngwing.com (7).png" alt="SQL Icon">
+                    <p class="extra-info">Conhecimento em consultas e otimização de bases de dados.</p>
                     <div class="rating">
                     <span class="star">&#9733;</span>
                     <span class="star">&#9733;</span>
@@ -251,8 +251,8 @@
                 <div class="front">C++</div>
                 <div class="back">
                 <div class="details">
-                    <h3>Básico</h3>
-                    <img src="imgs/cpp.png" alt="C++ Icon">
+                    <h3>intermédio</h3>
+                    <img src="imgs\pngwing.com (4).png" alt="C++ Icon">
                     <p class="extra-info">Conhecimento em programação orientada a objetos e algoritmos.</p>
                     <div class="rating">
                     <span class="star">&#9733;</span>
@@ -265,19 +265,19 @@
                 </div>
             </div>
 
-            <!-- Card de Inglês -->
+            <!-- Card de Java -->
             <div class="card card-ingles">
-                <div class="front">Inglês</div>
+                <div class="front">Java</div>
                 <div class="back">
                 <div class="details">
-                    <h3>Fluente</h3>
-                    <img src="imgs/english.png" alt="English Icon">
+                    <h3>Básico</h3>
+                    <img src="imgs\pngwing.com (8).png" alt="English Icon">
                     <p class="extra-info">Comunicação fluente em ambiente profissional e técnico.</p>
                     <div class="rating">
                     <span class="star">&#9733;</span>
                     <span class="star">&#9733;</span>
-                    <span class="star">&#9733;</span>
-                    <span class="star">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="star">&#9734;</span>
                     <span class="star">&#9734;</span>
                     </div>
                 </div>
@@ -352,13 +352,31 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
-            effect: "cards",
+            effect: "cards",  // Mantendo o efeito de "cards"
             grabCursor: true,
             autoplay: {
-                delay: 3000,  // Tempo de delay entre os slides (3000ms = 3 segundos)
+                delay: 3000,  // Tempo entre as transições
                 disableOnInteraction: false,  // Continua o autoplay após interação manual
-            }
+            },
+            speed: 800,  // Velocidade da transição entre os slides
+            autoplayDisableOnInteraction: false,
         });
+        
+        // Usando o Intersection Observer API para começar o autoplay quando o Swiper estiver visível
+        let swiperSection = document.querySelector('.projects');
+        
+        let observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    swiper.autoplay.start();  // Iniciar autoplay quando a secção estiver visível
+                } else {
+                    swiper.autoplay.stop();  // Parar autoplay quando a secção sair de vista
+                }
+            });
+        }, { threshold: 0.5 });  // Trigger quando 50% da secção estiver visível
+        
+        observer.observe(swiperSection);
+        
     </script>
     
 

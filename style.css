@@ -590,7 +590,7 @@ footer {
 /* Card de C++ */
 .card-cpp .front {
     background-color: #00599c; /* Azul do C++ */
-    color: white;
+    color: black;
 }
 
 .card-cpp .back {
@@ -601,7 +601,7 @@ footer {
 /* Card de Inglês */
 .card-ingles .front {
     background-color: #002868; /* Azul da bandeira dos EUA/Reino Unido */
-    color: white;
+    color: black;
 }
 
 .card-ingles .back {
