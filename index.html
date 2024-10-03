@@ -290,11 +290,11 @@
       <h2>Experiência</h2>
       <div class="timeline">
           <div class="timeline-item">
-              <h3>Empresa X</h3>
-              <p>Função: Desenvolvedor Web | Data: 2018-2021</p>
+              <h3>Freelancer</h3>
+              <p>Função: Desenvolvedor Web | Data: 2023-presente</p>
           </div>
           <div class="timeline-item">
-              <h3>Projeto Freelancer Y</h3>
+              <h3>Projetos</h3>
               <p>Função: Full Stack Developer | Data: 2021-presente</p>
           </div>
       </div>
@@ -315,21 +315,25 @@
 
   <!-- Contato (Contact) -->
   <section class="contact">
-      <h2>Contato</h2>
-      <form>
-          <label for="name">Nome:</label>
-          <input type="text" id="name" name="name" required>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="message">Mensagem:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit">Enviar</button>
-      </form>
-      <div class="social-icons">
-          <a href="https://linkedin.com">LinkedIn</a>
-          <a href="https://github.com">GitHub</a>
-      </div>
-  </section>
+    <h2>Contato</h2>
+    <form id="contact-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Enviar</button>
+    </form>
+    <div class="social-icons">
+        <a href="https://linkedin.com">LinkedIn</a>
+        <a href="https://github.com">GitHub</a>
+    </div>
+</section>
+
 
   <!-- Rodapé (Footer) -->
   <footer>
@@ -349,6 +353,13 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('ZW8c8qdUsa67EvFyI')
+  </script>
+  
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {

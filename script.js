@@ -269,3 +269,22 @@ gsap.timeline({
     duration: 1
   });
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita o envio padrão do formulário
+
+  // Recolhe os dados do formulário
+  const templateParams = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+  };
+
+  // Envia o email utilizando o EmailJS
+  emailjs.send("service_yxg2xbm","template_h1piq12", templateParams)
+      .then(function(response) {
+         alert('Mensagem enviada com sucesso!', response.status, response.text);
+      }, function(error) {
+         alert('Falha ao enviar a mensagem...', error);
+      });
+});
